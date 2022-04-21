@@ -75,11 +75,12 @@ class _RandomWordsState extends State<RandomWords> {
           if (i.isOdd) return const Divider();
 
           final index = i ~/ 2;
-          final isSaved = _saved.contains(_suggestions[index]);
 
           if (index >= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10));
           }
+          
+          final isSaved = _saved.contains(_suggestions[index]);
 
           return ListTile(
             title: Text(
